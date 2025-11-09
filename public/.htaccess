@@ -1,0 +1,8 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /SALAHUB/public/
+
+# Redirektuj sve zahteve na index.php osim ako fajl postoji
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
